@@ -1,0 +1,183 @@
+INFO  started: Metals version 0.8.3 in workspace '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod'
+INFO  time: initialize in 0.3s
+WARN  no build tool detected in workspace '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+WARN  Unsupported sbt version <unknown>
+4 04, 2020 11:28:39 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+重大: Internal error: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+java.util.concurrent.CompletionException: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:647)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:632)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:38)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:36)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.charAt(String.java:658)
+	at scala.collection.immutable.StringOps$.apply$extension(StringOps.scala:41)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.lastIndexBetween(MetalsEnrichments.scala:408)
+	at scala.meta.internal.metals.MultilineStringFormattingProvider.pipeInScope(MultilineStringFormattingProvider.scala:93)
+	at scala.meta.internal.metals.MultilineStringFormattingProvider.$anonfun$withToken$1(MultilineStringFormattingProvider.scala:139)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+WARN  Unsupported sbt version <unknown>
+INFO  running '/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/metals4750428104295334905/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+INFO  [info] Loading settings from assembly.sbt ...
+INFO  [info] Loading global plugins from /Users/soh/.sbt/1.0/plugins/project
+INFO  [info] Loading settings from idea.sbt ...
+INFO  [info] Loading global plugins from /Users/soh/.sbt/1.0/plugins
+INFO  [info] Loading settings from metals.sbt ...
+INFO  [info] Loading project definition from /Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/project
+INFO  [info] Updating {file:/Users/soh/01_paper/910_%E6%8E%88%E6%A5%AD/03_%E8%A8%80%E8%AA%9E%E5%B7%A5%E5%AD%A6/2020/easy-cp-by-gitpod/project/}easy-cp-by-gitpod-build...
+INFO  [info] downloading https://repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.4.0-RC1-105-118a551b/sbt-bloop-1.4.0-RC1-105-118a551b.jar ...
+INFO  [info] 	[SUCCESSFUL ] ch.epfl.scala#sbt-bloop;1.4.0-RC1-105-118a551b!sbt-bloop.jar (2279ms)
+INFO  [info] Done updating.
+INFO  [info] Loading settings from build.sbt ...
+INFO  [info] Set current project to tfpl (in build file:/Users/soh/01_paper/910_%E6%8E%88%E6%A5%AD/03_%E8%A8%80%E8%AA%9E%E5%B7%A5%E5%AD%A6/2020/easy-cp-by-gitpod/)
+INFO  [info] Updating {file:/Users/soh/01_paper/910_%E6%8E%88%E6%A5%AD/03_%E8%A8%80%E8%AA%9E%E5%B7%A5%E5%AD%A6/2020/easy-cp-by-gitpod/}easy-cp-by-gitpod...
+INFO  [info] Done updating.
+INFO  [success] Generated .bloop/easy-cp-by-gitpod-test.json
+INFO  [success] Generated .bloop/easy-cp-by-gitpod.json
+INFO  [success] Total time: 0 s, completed 2020/04/04 11:37:37
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 16s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher4173239804966221241/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading 2 projects from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop/easy-cp-by-gitpod.json'
+[0m[32m[D][0m Loading project from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop/easy-cp-by-gitpod-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.4.
+[0m[32m[D][0m   => /Users/soh/.sbt/boot/scala-2.12.4/lib/jline.jar
+[0m[32m[D][0m   => /Users/soh/.sbt/boot/scala-2.12.4/lib/scala-compiler.jar
+[0m[32m[D][0m   => /Users/soh/.sbt/boot/scala-2.12.4/lib/scala-library.jar
+[0m[32m[D][0m   => /Users/soh/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar
+[0m[32m[D][0m   => /Users/soh/.sbt/boot/scala-2.12.4/lib/scala-xml_2.12.jar
+[0m[32m[D][0m Missing analysis file for project 'easy-cp-by-gitpod-test'
+[0m[32m[D][0m Missing analysis file for project 'easy-cp-by-gitpod'
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher4173239804966221241/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher4173239804966221241/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/soh/Library/Caches/org.scalameta.metals/bsp.trace.json
+INFO  time: connected to build server in 0.7s
+INFO  Connected to Build server v1.4.0-RC1-105-118a551b
+INFO  time: indexed workspace in 1.01s
+INFO  skipping build import with status 'Installed'
+INFO  running '/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/metals7176917883631443880/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+INFO  [info] Loading settings from assembly.sbt ...
+INFO  [info] Loading global plugins from /Users/soh/.sbt/1.0/plugins/project
+INFO  [info] Loading settings from idea.sbt ...
+INFO  [info] Loading global plugins from /Users/soh/.sbt/1.0/plugins
+INFO  [info] Loading settings from metals.sbt ...
+INFO  [info] Loading project definition from /Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/project
+INFO  [info] Loading settings from build.sbt ...
+INFO  [info] Set current project to tfpl (in build file:/Users/soh/01_paper/910_%E6%8E%88%E6%A5%AD/03_%E8%A8%80%E8%AA%9E%E5%B7%A5%E5%AD%A6/2020/easy-cp-by-gitpod/)
+INFO  [info] Updating {file:/Users/soh/01_paper/910_%E6%8E%88%E6%A5%AD/03_%E8%A8%80%E8%AA%9E%E5%B7%A5%E5%AD%A6/2020/easy-cp-by-gitpod/}easy-cp-by-gitpod...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.11/scala-compiler-2.12.11.jar ...
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.11!scala-reflect.jar (2106ms)
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.12.11!scala-compiler.jar (2156ms)
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-library;2.12.11!scala-library.jar (2182ms)
+INFO  [info] Done updating.
+INFO  [info] downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.11/scala-compiler-2.12.11-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11-sources.jar ...
+INFO  [info] 	[SUCCESSFUL ] org.fusesource.jansi#jansi;1.12!jansi.jar(src) (567ms)
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-library;2.12.11!scala-library.jar(src) (642ms)
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.12.11!scala-compiler.jar(src) (645ms)
+INFO  [info] 	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.11!scala-reflect.jar(src) (1607ms)
+INFO  [success] Generated .bloop/easy-cp-by-gitpod.json
+INFO  [success] Generated .bloop/easy-cp-by-gitpod-test.json
+INFO  [success] Total time: 7 s, completed 2020/04/04 11:38:40
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 14s
+INFO  disconnected: build server
+No more data in the client stdin, exiting...
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher17924386168683584/bsp.socket'...
+Waiting for the bsp connection to come up...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Loading 2 projects from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop/easy-cp-by-gitpod.json'
+[0m[32m[D][0m Loading project from '/Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/.bloop/easy-cp-by-gitpod-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.11.
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/jline/jline/jars/jline-2.14.6.jar
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.12.jar
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.12.11.jar
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.11.jar
+[0m[32m[D][0m   => /Users/soh/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.11.jar
+[0m[32m[D][0m Resolving org.scalameta:semanticdb-scalac_2.12.11:4.3.6
+[0m[32m[D][0m Configured SemanticDB in projects 'easy-cp-by-gitpod', 'easy-cp-by-gitpod-test'
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher17924386168683584/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/s_/nhk1jk6n3qd_8dnc_shp4kjc0000gn/T/bsp-launcher17924386168683584/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/soh/Library/Caches/org.scalameta.metals/bsp.trace.json
+INFO  time: connected to build server in 3.03s
+INFO  Connected to Build server v1.4.0-RC1-105-118a551b
+INFO  time: indexed workspace in 0.26s
+WARN  no build target for: /Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/src/main/Main.scala
+INFO  skipping build import with status 'Installed'
+4 04, 2020 11:55:11 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+重大: Internal error: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+java.util.concurrent.CompletionException: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:647)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:632)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1977)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:38)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:36)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.charAt(String.java:658)
+	at scala.collection.immutable.StringOps$.apply$extension(StringOps.scala:41)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.lastIndexBetween(MetalsEnrichments.scala:408)
+	at scala.meta.internal.metals.MultilineStringFormattingProvider.pipeInScope(MultilineStringFormattingProvider.scala:93)
+	at scala.meta.internal.metals.MultilineStringFormattingProvider.$anonfun$withToken$1(MultilineStringFormattingProvider.scala:139)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+INFO  no build target: using presentation compiler with only scala-library
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 59
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 58
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 61
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 63
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 65
+4 04, 2020 11:55:14 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 64
+WARN  no build target for: /Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/src/main/Main.scala
+WARN  no build target for: /Users/soh/01_paper/910_授業/03_言語工学/2020/easy-cp-by-gitpod/src/main/Main.scala
