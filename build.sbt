@@ -1,7 +1,7 @@
 name := "tfpl"
 version := "1.0"
 
-scalaVersion := "2.12.11"
+scalaVersion := "2.12.10"
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.1"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.1" % "test"
