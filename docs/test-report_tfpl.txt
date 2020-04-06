@@ -1,0 +1,29 @@
+Run starting. Expected test count is: 0
+A_Test01:
+- always true: 2 (9 milliseconds)
+A_Test02:
+- always true: 4 (1 millisecond)
+B_Test02:
+- always true: 8 (0 milliseconds)
+A_Test03:
+- always false: 4 *** FAILED *** (3 milliseconds)
+  org.scalatest.exceptions.TestFailedException was thrown. (Tests.scala:99)
+Run completed in 332 milliseconds.
+Total number of tests run: 4
+Suites: completed 4, aborted 0
+Tests: succeeded 3, failed 1, canceled 0, ignored 0, pending 0
+*** 1 TEST FAILED ***
+A_Test03:
+
+- always false: 4 *** FAILED *** (3 milliseconds)
+  org.scalatest.exceptions.TestFailedException was thrown. (Tests.scala:99)
+  org.scalatest.exceptions.TestFailedException:
+  ...
+  at A_Test03.$anonfun$new$3(Tests.scala:99)
+  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+  at org.scalatest.Transformer.apply(Transformer.scala:22)
+  at org.scalatest.Transformer.apply(Transformer.scala:20)
+  at org.scalatest.funsuite.AnyFunSuiteLike$$anon$1.apply(AnyFunSuiteLike.scala:189)
+  ...
