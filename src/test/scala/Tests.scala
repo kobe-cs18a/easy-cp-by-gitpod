@@ -109,3 +109,12 @@ class B_Test02 extends FunSuite {
     }
 
 }
+
+class B_Test03 extends FunSuite {
+
+    val s = 8
+    test(s"always true: 8") {
+        assert(1 == 1)
+    }
+
+}
