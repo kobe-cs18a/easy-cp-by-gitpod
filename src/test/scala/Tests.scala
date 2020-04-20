@@ -79,7 +79,7 @@ class SampleReporter extends Reporter {
 
 class A_Test01 extends FunSuite {
 
-    test(s"always true: 2") {
+    test(s"テスト用 always true: 2") {
         assert(1 == 1)
     }
 
