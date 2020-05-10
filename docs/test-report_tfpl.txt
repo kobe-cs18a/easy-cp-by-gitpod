@@ -1,29 +1,18 @@
 Run starting. Expected test count is: 0
-A_Test01:
-- always true: 2 (9 milliseconds)
-A_Test02:
-- always true: 4 (1 millisecond)
-B_Test02:
-- always true: 8 (0 milliseconds)
-A_Test03:
-- always false: 4 *** FAILED *** (3 milliseconds)
-  org.scalatest.exceptions.TestFailedException was thrown. (Tests.scala:99)
-Run completed in 332 milliseconds.
-Total number of tests run: 4
-Suites: completed 4, aborted 0
-Tests: succeeded 3, failed 1, canceled 0, ignored 0, pending 0
-*** 1 TEST FAILED ***
-A_Test03:
-
-- always false: 4 *** FAILED *** (3 milliseconds)
-  org.scalatest.exceptions.TestFailedException was thrown. (Tests.scala:99)
-  org.scalatest.exceptions.TestFailedException:
-  ...
-  at A_Test03.$anonfun$new$3(Tests.scala:99)
-  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-  at org.scalatest.Transformer.apply(Transformer.scala:22)
-  at org.scalatest.Transformer.apply(Transformer.scala:20)
-  at org.scalatest.funsuite.AnyFunSuiteLike$$anon$1.apply(AnyFunSuiteLike.scala:189)
-  ...
+A_Sugar_Practice_03:
+- a) data/test.csp がある: 1 (9 milliseconds)
+- b) 変数が正しく定義されている: 1 (1 millisecond)
+- c) 制約が正しく定義されている: 3 (0 milliseconds)
+A_Sugar_Practice_01:
+- a) data/test.csp がある: 1 (0 milliseconds)
+- b) 変数が正しく定義されている: 1 (0 milliseconds)
+- c) 制約が正しく定義されている: 3 (1 millisecond)
+A_Sugar_Practice_02:
+- a) data/test.csp がある: 1 (1 millisecond)
+- b) 変数が正しく定義されている: 1 (0 milliseconds)
+- c) 制約が正しく定義されている: 3 (0 milliseconds)
+Run completed in 334 milliseconds.
+Total number of tests run: 9
+Suites: completed 3, aborted 0
+Tests: succeeded 9, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.

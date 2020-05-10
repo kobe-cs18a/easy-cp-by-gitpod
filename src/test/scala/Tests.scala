@@ -4,13 +4,14 @@ import org.scalatest.Reporter
 import org.scalatest.events._
 import org.scalatest.Tag
 import Console._
+import jp.kobe_u.copris._
 
 class SampleReporter extends Reporter {
   // https://qiita.com/NomadBlacky/items/335cc84d0da978240b60
 
   var totalScore = 0
   var fullScore = 0
-  var table = IndexedSeq.empty[String]
+  var table = IndexedSeq.empty[Tuple2[String,String]]
   val c1width = 30
   val c2width = 3
   val c3width = 3
@@ -35,17 +36,26 @@ class SampleReporter extends Reporter {
         val score = testName.split(':').last.trim.toInt
         totalScore += score
         fullScore += score
-        table = table :+ s"| ${alignL(s"${suiteName}-${name}", c1width)} | ${alignR(score.toString, 3)} |" + GREEN + " OK " + RESET + s"| ${alignR(score.toString, 3)} |"
+        table = table :+ (s"${suiteName}",s"| ${alignL(s"${name}", c1width)} | ${alignR(score.toString, 3)} |" + GREEN + " OK " + RESET + s"| ${alignR(score.toString, 3)} |")
         // println(s"OK: ${suiteName} ${testName}")
     }
     case TestFailed(ordinal, message, suiteName, suiteId, suiteClassName, testName, testText, recordedEvents, analysis, throwable, duration, formatter, location, rerunner, payload, threadName, timeStamp) => {
         val name = testName.split(':').head.trim
         val score = testName.split(':').last.trim.toInt
         fullScore += score
-        table = table :+ s"| ${alignL(s"${suiteName}-${name}", c1width)} | ${alignR(score.toString, 3)} |" + RED + " NG " + RESET + s"| ${alignR("0", 3)} |"
+        table = table :+ (s"${suiteName}",s"| ${alignL(s"${name}", c1width)} | ${alignR(score.toString, 3)} |" + RED + " NG " + RESET + s"| ${alignR("0", 3)} |")
     }
     case RunCompleted(ordinal, duration, summary, formatter, location, payload, threadName, timeStamp) => {
-        table.sorted.foreach(println)
+        
+        var previousSuite = ""
+        table.sorted.foreach{line => 
+            if (previousSuite != line._1) {
+                println("|" + Seq.fill(c1width+c2width+c3width+13)("-").mkString + "|")
+                println(s"| ${line._1}")
+                previousSuite = line._1
+            }
+            println(line._2)
+        }
         println("|" + Seq.fill(c1width+c2width+c3width+13)("-").mkString + "|")
         println(s"| ${alignL(s"Total", 30)} | ${alignR(fullScore.toString, 3)} |    | ${alignR(totalScore.toString, 3)} |")
     }
@@ -77,44 +87,57 @@ class SampleReporter extends Reporter {
  */  
 }
 
-class A_Test01 extends FunSuite {
+abstract class Template extends FunSuite {
+    val baseDir = "data/"
+    def fileName: String
+    val variables: Seq[Var]
+    val constraints: Seq[Constraint]
+    var fileScore: Int = 1
+    var varScore: Int = 1
+    var conScore: Int = 3
+    def variablesAreCorrect(xs: Seq[Var]): Boolean = {
+        variables.toSet == xs.toSet
+    }
+    def constraintsAreCorrect(cs: Seq[Constraint]): Boolean
+    def fileExist(score: Int) = s"a) ${baseDir}${fileName} がある: $score"
+    def varsCorrect(score: Int) = s"b) 変数が正しく定義されている: $score"
+    def consCorrect(score: Int) = s"c) 制約が正しく定義されている: $score"
 
-    test(s"always true: 2") {
-        assert(1 == 1)
+    test(fileExist(fileScore)) {
+        assert(new java.io.File(s"${baseDir}${fileName}").exists())
     }
 
+    test(varsCorrect(varScore)) {
+        assert(true)
+
+    }
+
+    test(consCorrect(conScore)) {
+        assert(constraintsAreCorrect(constraints))
+    }
+    
 }
 
-class A_Test02 extends FunSuite {
+class A_Sugar_Practice_01 extends Template {
+    def fileName = "test.csp"
+    val variables = Seq(Var("x"),Var("y"))
+    val constraints = Seq.empty[Constraint]
 
-    test(s"always true: 4") {
-        assert(1 == 1)
-    }
-
+    def constraintsAreCorrect(cs: Seq[Constraint]): Boolean = true
 }
 
-class A_Test03 extends FunSuite {
+class A_Sugar_Practice_02 extends Template {
+    def fileName = "test.csp"
+    val variables = Seq(Var("x"),Var("y"))
+    val constraints = Seq.empty[Constraint]
 
-    test(s"always false: 4") {
-        assert(1 == 0)
-    }
-
+    def constraintsAreCorrect(cs: Seq[Constraint]): Boolean = true
 }
 
-class B_Test02 extends FunSuite {
+class A_Sugar_Practice_03 extends Template {
+    def fileName = "test.csp"
+    val variables = Seq(Var("x"),Var("y"))
+    val constraints = Seq.empty[Constraint]
 
-    val s = 8
-    test(s"always true: 8") {
-        assert(1 == 1)
-    }
-
-}
-
-class B_Test03 extends FunSuite {
-
-    val s = 8
-    test(s"always true: 8") {
-        assert(1 == 1)
-    }
-
+    def constraintsAreCorrect(cs: Seq[Constraint]): Boolean = true
 }
